@@ -1,0 +1,378 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  /* colors */
+  --strong-cyan: 172 67% 45%;
+  --very-dark-cyan: 183 100% 15%;
+  --dark-grayish-cyan1: 186 14% 43%;
+  --dark-grayish-cyan2: 184 14% 56%;
+  --light-grayish-cyan1: 185 41% 84%;
+  --light-grayish-cyan2: 189 41% 97%;
+  --clr-white: 0 0% 100%;
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: "Space Mono", monospace;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: hsl(var(--light-grayish-cyan1));
+  overflow-x: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* BUTTONS */
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.btn-wrapper input {
+  align-items: center;
+  width: 46%;
+}
+
+.btn {
+  width: 46%;
+  padding: 6px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-wrapper,
+.btn:hover,
+.btn:focus {
+  /* background: rgb(159, 232, 223); */
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-wrapper .btn-active {
+  background-color: hsl(var(--strong-cyan));
+  color: hsl(var(--very-dark-cyan));
+}
+
+/* LAYOUT */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logo {
+  margin: 5rem 0 4rem 0;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: hsl(var(--clr-white));
+  box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+  border-radius: 25px 25px 0px 0px;
+  padding: 3.2rem;
+}
+
+.bill-container {
+  width: 100%;
+  margin-bottom: 3.2rem;
+}
+
+.label-wrapper {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: hsl(var(--dark-grayish-cyan1));
+}
+
+.label-wrapper--people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+
+.error-msg {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsla(13, 70%, 61%, 1);
+  opacity: 0;
+}
+
+.show-error-msg {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.icon-dollar,
+.icon-person {
+  position: absolute;
+  top: 31%;
+  left: 7%;
+}
+
+input {
+  border: none;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-text {
+  width: 100%;
+  font-weight: 700;
+  text-align: right;
+  color: hsl(var(--very-dark-cyan));
+  font-size: 2.4rem;
+  padding: 6px 2.4rem;
+
+  border-radius: 5px;
+  background-color: hsl(var(--light-grayish-cyan2));
+}
+
+.input-text:focus {
+  outline: none;
+  border: 2px solid hsl(var(--strong-cyan));
+}
+
+.tip-percent {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 36px;
+  background: hsl(var(--very-dark-cyan));
+  color: hsl(var(--clr-white));
+  text-align: center;
+}
+
+.tip-container {
+  margin-bottom: 3.2rem;
+}
+
+.tip-container > div {
+  margin-bottom: 1.6rem;
+}
+
+.people-container {
+  margin-bottom: 3.2rem;
+}
+
+/* Calculator Container */
+.calc-container {
+  width: 100%;
+  background: hsl(var(--very-dark-cyan));
+  border-radius: 15px;
+  padding: 3.7rem 2.2rem 3.2rem 2.4rem;
+}
+
+.line-wrapper > .line-output:first-child {
+  margin-bottom: 2rem;
+}
+
+.line-wrapper > .line-output:last-child {
+  margin-bottom: 3.2rem;
+}
+
+.line-output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 24px;
+  color: hsl(var(--clr-white));
+}
+
+.description {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 19px;
+  color: hsl(var(--dark-grayish-cyan2));
+}
+
+.value {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: -0.57px;
+  color: hsl(var(--strong-cyan));
+}
+
+.reset-btn {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 30px;
+  width: 100%;
+  text-decoration: none;
+  background: hsl(var(--strong-cyan));
+  color: hsl(var(--very-dark-cyan));
+  text-transform: uppercase;
+  padding: 9px 32px;
+  border-radius: 5px;
+  border: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@keyframes show-error {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header__logo {
+    margin: 16.3rem 0 8.7rem 0;
+  }
+
+  .main-container {
+    width: 70.6%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4.8rem;
+    padding: 4.5rem 4.8rem 4.8rem 4.8rem;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    border-radius: 25px;
+  }
+
+  .people-container {
+    margin-bottom: 0;
+  }
+
+  .calc-container {
+    padding: 4rem;
+  }
+
+  .label-wrapper--people {
+    justify-content: space-between;
+  }
+
+  .line-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 12.2rem;
+  }
+
+  .line-wrapper > .line-output:first-child {
+    margin-bottom: 2.5rem;
+  }
+
+  .line-wrapper > .line-output:last-child {
+    margin-bottom: 0;
+  }
+
+  .value {
+    font-size: 4.8rem;
+    line-height: 71px;
+    letter-spacing: -1px;
+  }
+
+  .reset-btn {
+    padding: 12px 40px;
+  }
+}
